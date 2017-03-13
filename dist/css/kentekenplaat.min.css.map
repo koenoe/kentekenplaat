@@ -1,0 +1,1 @@
+{"version":3,"sources":["kentekenplaat.css","kentekenplaat.scss"],"names":[],"mappings":"AAAA,yCAAyC;ACAzC;EACE,gBAAe,EAChB","file":"kentekenplaat.min.css","sourcesContent":["/* line 1, src/scss/kentekenplaat.scss */\n.kentekenplaat {\n  background: red; }\n",".kentekenplaat {\n  background: red;\n}\n"]}

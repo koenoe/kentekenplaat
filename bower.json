@@ -1,0 +1,17 @@
+{
+  "name": "kentekenplaat",
+  "description": "",
+  "main": "dist/js/kentekenplaat.min.js",
+  "authors": [
+    "Koen Romers"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/koenoe/kentekenplaat",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
