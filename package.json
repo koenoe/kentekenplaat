@@ -1,0 +1,19 @@
+{
+  "name": "kentekenplaat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/kentekenplaat.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koenoe/kentekenplaat.git"
+  },
+  "author": "Koen Romers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koenoe/kentekenplaat/issues"
+  },
+  "homepage": "https://github.com/koenoe/kentekenplaat#readme"
+}
