@@ -1,5 +1,1 @@
-/* line 1, src/scss/kentekenplaat.scss */
-.kentekenplaat {
-  background: red; }
-
-/*# sourceMappingURL=kentekenplaat.min.css.map */
+.kentekenplaat{background:#ff0;border:1px solid #000;font-size:2rem;font-weight:700;padding:1rem;position:relative;text-transform:uppercase}
