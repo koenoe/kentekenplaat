@@ -7,7 +7,6 @@ class Kentekenplaat {
   }
 
   init() {
-    console.log('Kentekenplaat:init', this); //eslint-disable-line
     this.addEventListeners();
   }
 
@@ -45,13 +44,8 @@ class Kentekenplaat {
   getSidecode() {
     const licenseplate = this.parseLicenseplate();
     const sidecodes = Kentekenplaat.sidecodes();
-    let sidecode = false;
-    sidecodes.forEach((item, index) => {
-      if (licenseplate.match(item)) {
-        sidecode = index + 1;
-      }
-    });
-    return sidecode;
+    const index = sidecodes.findIndex(item => licenseplate.match(item));
+    return index + 1;
   }
 
   parseLicenseplate() {
