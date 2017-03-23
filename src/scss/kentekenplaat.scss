@@ -1,9 +1,24 @@
+$kentekenplaat-border: 1px solid #000 !default;
+$kentekenplaat-foreground: #222;
+$kentekenplaat-background: #f2ba00;
+$kentekenplaat-highlight: #ffe153;
+$kentekenplaat-country: #003399;
+
 .kentekenplaat {
-  background: yellow;
-  border: 1px solid black;
-  font-size: 2rem;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  border: $kentekenplaat-border;
+  
+  font-size: 1em;
+  padding: .2em;  
+  color: $kentekenplaat-foreground;
   font-weight: bold;
-  padding: 1rem;
-  position: relative;
   text-transform: uppercase;
+  line-height: normal;
+  background-color: $kentekenplaat-background;
+  border-radius: 3px;
+  
+  @if $kentekenplaat-highlight {
+    text-shadow: 1px 1px $kentekenplaat-highlight;
+  }
 }
