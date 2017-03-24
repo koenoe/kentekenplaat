@@ -45,3 +45,6 @@ node_modules
 bower_components
 .publish
 docs/_site
+
+# Ignore map files
+*.map
