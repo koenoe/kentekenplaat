@@ -1,7 +1,7 @@
 {
   "name": "kentekenplaat",
   "description": "",
-  "main": "dist/js/kentekenplaat.min.js",
+  "main": "src/js/kentekenplaat.js",
   "authors": [
     "Koen Romers"
   ],
