@@ -1,7 +1,7 @@
 {
   "name": "kentekenplaat",
   "version": "1.0.0",
-  "description": "",
+  "description": "Automatically formats an input to a Dutch licenseplate.",
   "main": "dist/js/kentekenplaat.min.js",
   "scripts": {
     "test": "gulp eslint",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/koenoe/kentekenplaat.git"
   },
-  "author": "Koen Romers",
+  "author": "Koen Romers <info@koenromers.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/koenoe/kentekenplaat/issues"

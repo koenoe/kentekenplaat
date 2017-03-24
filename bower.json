@@ -1,9 +1,13 @@
 {
   "name": "kentekenplaat",
-  "description": "",
-  "main": "src/js/kentekenplaat.js",
+  "description": "Automatically formats an input to a Dutch licenseplate.",
+  "main": [
+    "src/js/kentekenplaat.js",
+    "src/scss/kentekenplaat.scss"
+  ],
   "authors": [
-    "Koen Romers"
+    "Koen Romers",
+    "Rick Meijer"
   ],
   "license": "MIT",
   "homepage": "https://github.com/koenoe/kentekenplaat",
