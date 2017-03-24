@@ -7,15 +7,19 @@ class Kentekenplaat {
   }
 
   init() {
+    this.format();
     this.addEventListeners();
   }
 
-  addEventListeners() {
-    this.element.addEventListener(Kentekenplaat.defaults.event, this.format.bind(this));
+  addEventListener(event) {
+    this.element.addEventListener(event, this.format.bind(this));
   }
 
-  format(event) {
-    const element = event.target || event.srcElement;
+  addEventListeners() {
+    this.options.events.forEach(this.addEventListener.bind(this));
+  }
+
+  format() {
     let licenseplate = this.parseLicenseplate();
 
     if (licenseplate.length === 6) {
@@ -36,7 +40,7 @@ class Kentekenplaat {
         if (sidecode === 12 || sidecode === 13) {
           licenseplate = `${licenseplate.substr(0, 1)}-${licenseplate.substr(1, 2)}-${licenseplate.substr(3, 3)}`;
         }
-        element.value = licenseplate;
+        this.element.value = licenseplate;
       }
     }
   }
@@ -74,7 +78,7 @@ class Kentekenplaat {
 }
 
 Kentekenplaat.defaults = {
-  event: 'keyup',
+  events: ['keyup', 'focus'],
 };
 
 module.exports = Kentekenplaat;
