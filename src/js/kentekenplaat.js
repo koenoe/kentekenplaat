@@ -2,6 +2,7 @@ class Kentekenplaat {
   constructor(element, options) {
     this.options = Object.assign({}, Kentekenplaat.defaults, options);
     this.element = element || document.querySelector('.kentekenplaat');
+    this.element.setAttribute('maxlength', 8);
 
     this.init();
   }
