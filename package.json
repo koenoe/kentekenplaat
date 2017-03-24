@@ -9,7 +9,6 @@
     "build": "gulp build"
   },
   "pre-commit": [
-    "build",
     "test"
   ],
   "repository": {
