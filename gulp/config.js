@@ -11,10 +11,16 @@ const directories = {
 
 const files = {
   scss: [
-    `${directories.src}/**/*.scss`,
+    `${directories.src}/scss/*.scss`,
   ],
   js: [
-    `${directories.src}/**/*.js`,
+    `${directories.src}/js/*.js`,
+  ],
+  vector: [
+    `${directories.src}/img/*.svg`,
+  ],
+  fonts: [
+    `${directories.src}/fonts/*.*`,
   ],
 };
 

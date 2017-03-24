@@ -1,24 +1,37 @@
+@import 'kentekenfont';
+
 $kentekenplaat-border: 1px solid #000 !default;
 $kentekenplaat-foreground: #222;
 $kentekenplaat-background: #f2ba00;
 $kentekenplaat-highlight: #ffe153;
-$kentekenplaat-country: #003399;
+$kentekenplaat-country: #039;
+$kentekenplaat-font: 'Kenteken', Arial, sans-serif;
 
 .kentekenplaat {
-  box-sizing: border-box;
-  background-repeat: no-repeat;
+  background: $kentekenplaat-background url('../img/flag.svg') no-repeat top left;
   border: $kentekenplaat-border;
-  
-  font-size: 1em;
-  padding: .2em;  
-  color: $kentekenplaat-foreground;
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: normal;
-  background-color: $kentekenplaat-background;
   border-radius: 3px;
-  
+  box-sizing: border-box;
+  color: $kentekenplaat-foreground;
+  font-family: $kentekenplaat-font;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: normal;
+  max-width: 7em;
+  padding: .1em;
+  padding-left: 1em;
+  text-transform: uppercase;
+  transition: background-color .3s ease, text-shadow .3s ease;
+
   @if $kentekenplaat-highlight {
     text-shadow: 1px 1px $kentekenplaat-highlight;
+  }
+
+  &:focus {
+    background-color: lighten($kentekenplaat-background, 5%);
+    outline: none;
+    @if $kentekenplaat-highlight {
+      text-shadow: 0 0 $kentekenplaat-highlight;
+    }
   }
 }

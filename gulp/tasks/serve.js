@@ -5,5 +5,5 @@ import runSequence from 'run-sequence';
 gulp.task('serve', ['clean'], (cb) => {
   global.isBuild = false;
 
-  runSequence(['styles'], 'browserify', 'watch', cb);
+  runSequence(['styles', 'fonts:copy', 'images:vector'], 'browserify', 'watch', cb);
 });

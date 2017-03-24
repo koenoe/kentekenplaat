@@ -46,6 +46,7 @@
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "2.4.1",
     "gulp-streamify": "1.0.2",
+    "gulp-svgmin": "^1.2.3",
     "gulp-uglify": "2.0.1",
     "gulp-util": "3.0.8",
     "pre-commit": "^1.2.2",
@@ -54,5 +55,6 @@
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
     "watchify": "3.9.0"
-  }
+  },
+  "dependencies": {}
 }

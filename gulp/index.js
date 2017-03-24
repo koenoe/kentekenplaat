@@ -14,7 +14,9 @@ gulp.on('stop', () => {
       });
     }
   }
-  setTimeout(stop, 500);
+  // If you have a slow laptop, increase the value. 💩
+  // If you don't see any js in the dist folder, increase the value. 💩
+  setTimeout(stop, 1500);
 });
 
 tasks.forEach((task) => {

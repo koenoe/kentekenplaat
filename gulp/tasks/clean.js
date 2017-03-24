@@ -3,4 +3,9 @@ import gulp from 'gulp';
 import del from 'del';
 import config from '../config';
 
-gulp.task('clean', () => del([config.directories.build, `${config.directories.demo}/js`, `${config.directories.demo}/css`]));
+gulp.task('clean', () => del([config.directories.build,
+  `${config.directories.demo}/js`,
+  `${config.directories.demo}/img`,
+  `${config.directories.demo}/fonts`,
+  `${config.directories.demo}/css`,
+]));
