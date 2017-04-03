@@ -2,7 +2,6 @@
   "extends": "airbnb",
   "globals": {
     "document": true,
-    "window": true,
-    "CustomEvent": true
+    "window": true
   }
 }

@@ -1,3 +1,4 @@
+/* global CustomEvent */
 class Kentekenplaat {
   constructor(element, options) {
     this.options = Object.assign({}, Kentekenplaat.defaults, options);
