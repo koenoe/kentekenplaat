@@ -21,17 +21,19 @@ class Kentekenplaat {
     this.options.events.forEach(this.addEventListener.bind(this));
   }
 
-  dispatchValid(licenseplate) {
-    const isValidEvent = new CustomEvent('kentekenplaat.valid', {
+  dispatch(licenseplate, valid) {
+    const event = valid ? 'kentekenplaat.valid' : 'kentekenplaat.invalid';
+    const validEvent = new CustomEvent(event, {
       detail: {
         licenseplate,
       },
     });
-    this.element.dispatchEvent(isValidEvent);
+    this.element.dispatchEvent(validEvent);
   }
 
-  format() {
+  format(event) {
     let licenseplate = this.parseLicenseplate();
+    let valid = false;
 
     if (licenseplate.length === 6) {
       const sidecode = this.getSidecode();
@@ -51,10 +53,13 @@ class Kentekenplaat {
         if (sidecode === 12 || sidecode === 13) {
           licenseplate = `${licenseplate.substr(0, 1)}-${licenseplate.substr(1, 2)}-${licenseplate.substr(3, 3)}`;
         }
-        this.dispatchValid(licenseplate);
+        valid = true;
       }
     }
     this.element.value = licenseplate;
+    if (event && event.type === 'change') {
+      this.dispatch(licenseplate, valid);
+    }
   }
 
   getSidecode() {
@@ -90,7 +95,7 @@ class Kentekenplaat {
 }
 
 Kentekenplaat.defaults = {
-  events: ['keyup', 'focus'],
+  events: ['keyup', 'focus', 'change'],
 };
 
 module.exports = Kentekenplaat;

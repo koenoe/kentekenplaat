@@ -1,6 +1,6 @@
 {
   "name": "kentekenplaat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Automatically formats an input to a Dutch licenseplate.",
   "main": "dist/js/kentekenplaat.min.js",
   "scripts": {
