@@ -22,20 +22,29 @@
         text-align: center;
         font-size: 2em;
       }
+      .container > div {
+        margin-bottom: 25px;
+      }
     </style>
   </head>
   <body>
 
     <div class="container">
       <h1>Kentekenplaat</h1>
-
-      <input type="text" class="kentekenplaat" value="64gshr">
+      <div>
+        <input type="text" class="kentekenplaat" value="xxxx99">
+      </div>
+      <div>
+        <input type="text" class="kentekenplaat">
+      </div>
     </div>
-
     <script src="js/kentekenplaat.min.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function(){
-        new Kentekenplaat();
+      document.querySelectorAll('.kentekenplaat').forEach(function(element){
+        new Kentekenplaat(element);
+        element.addEventListener('kentekenplaat.valid', function(e) {
+          console.log('kentekenplaat.valid:', e.detail.licenseplate);
+        });
       });
     </script>
   </body>

@@ -20,6 +20,15 @@ class Kentekenplaat {
     this.options.events.forEach(this.addEventListener.bind(this));
   }
 
+  dispatchValid(licenseplate) {
+    const isValidEvent = new CustomEvent('kentekenplaat.valid', {
+      detail: {
+        licenseplate,
+      },
+    });
+    this.element.dispatchEvent(isValidEvent);
+  }
+
   format() {
     let licenseplate = this.parseLicenseplate();
 
@@ -41,9 +50,10 @@ class Kentekenplaat {
         if (sidecode === 12 || sidecode === 13) {
           licenseplate = `${licenseplate.substr(0, 1)}-${licenseplate.substr(1, 2)}-${licenseplate.substr(3, 3)}`;
         }
-        this.element.value = licenseplate;
+        this.dispatchValid(licenseplate);
       }
     }
+    this.element.value = licenseplate;
   }
 
   getSidecode() {
