@@ -31,9 +31,15 @@ class Kentekenplaat {
     this.element.dispatchEvent(validEvent);
   }
 
-  format(event) {
+  format() {
     let licenseplate = this.parseLicenseplate();
-    let valid = false;
+    // If licenseplate first was valid, but not anymore, fire invalid event
+    if (this.valid && licenseplate.length < 6) {
+      this.valid = false;
+      this.dispatch(licenseplate, this.valid);
+    }
+    // By default valid is false
+    this.valid = false;
 
     if (licenseplate.length === 6) {
       const sidecode = this.getSidecode();
@@ -53,13 +59,11 @@ class Kentekenplaat {
         if (sidecode === 12 || sidecode === 13) {
           licenseplate = `${licenseplate.substr(0, 1)}-${licenseplate.substr(1, 2)}-${licenseplate.substr(3, 3)}`;
         }
-        valid = true;
+        this.valid = true;
       }
+      this.dispatch(licenseplate, this.valid);
     }
     this.element.value = licenseplate;
-    if (event && event.type === 'change') {
-      this.dispatch(licenseplate, valid);
-    }
   }
 
   getSidecode() {
@@ -95,7 +99,7 @@ class Kentekenplaat {
 }
 
 Kentekenplaat.defaults = {
-  events: ['keyup', 'focus', 'change'],
+  events: ['keyup', 'focus'],
 };
 
 module.exports = Kentekenplaat;
